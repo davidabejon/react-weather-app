@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import Vista from './componentes/Vista';
+import Footer from './componentes/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    titulo: 'provincias'
+  };
+
+  cambiarTitulo = titulo => {
+    this.setState({
+      titulo
+    });
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <h1 className='text-center mt-5 mb-5 pt-2 pb-2'>Lista de {this.state.titulo}</h1>
+        <div className='container'>
+          <div className='col-12 row'>
+            <Vista
+              cambiarTitulo = {this.cambiarTitulo}
+            />
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
