@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root {
+    --fuente: 'Staatliches', cursive;
+}
+
+body {
+    background-color: #005b96;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente);
+}
+h1 {
+    color: white;
+    text-shadow: 3px 5px 0px #000;
+    background-color: #014d7d;
+}
